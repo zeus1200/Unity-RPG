@@ -2,7 +2,7 @@
 using System.Collections;
 public class playerController : MonoBehaviour {
 	private Animator animator;
-	private float vel=1.5f;
+	private float speed=1.5f;
 	private float time;
 	private bool hitted;
 	private Vector3 from, to;
@@ -17,8 +17,8 @@ public class playerController : MonoBehaviour {
 		//transform.rotation = Quaternion.identity;
 		//rigidbody2D.velocity = Vector3.zero;
 		rigidbody2D.mass = 999999f;
-		float v = vel*Input.GetAxis("Vertical")* Time.deltaTime;
-		float h = vel*Input.GetAxis("Horizontal")* Time.deltaTime;
+		float v = speed*Input.GetAxis("Vertical")* Time.deltaTime;
+		float h = speed*Input.GetAxis("Horizontal")* Time.deltaTime;
 		ManageMovement(h, v);
 		//ManageMovement(h, v);
 		if (Input.GetKeyDown (KeyCode.Space)&&!transform.Find("sword").gameObject.activeSelf) {
