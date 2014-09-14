@@ -25,6 +25,7 @@ public class introController : MonoBehaviour {
 		//water.animation.playAutomatically = false;
 		//water.animation.Stop ();
 		Screen.SetResolution(480, 480,false);
+		Screen.SetResolution(480, 480,false);
 	}
 	
 	// Update is called once per frame
