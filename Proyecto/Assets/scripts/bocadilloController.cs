@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class bocadilloController : MonoBehaviour {
+public class BocadilloController : MonoBehaviour {
 	private GameObject player;
 	private GameObject[] npcs;
 	private GameObject npc;

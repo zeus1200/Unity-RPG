@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class mainMenu : MonoBehaviour {
+public class MainMenu : MonoBehaviour {
 
 //	public Texture backgroundTexture;
 	public GUIStyle stylePlay;

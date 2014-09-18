@@ -46,15 +46,17 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\scripts\BocadilloController.cs" />
+     <Compile Include="Assets\scripts\CameraController.cs" />
+     <Compile Include="Assets\scripts\GeneralController.cs" />
+     <Compile Include="Assets\scripts\IntroController.cs" />
+     <Compile Include="Assets\scripts\MainMenu.cs" />
+     <Compile Include="Assets\scripts\MapChangeTrigger.cs" />
+     <Compile Include="Assets\scripts\MonsterBlueController.cs" />
+     <Compile Include="Assets\scripts\NpcController.cs" />
+     <Compile Include="Assets\scripts\PlayerController.cs" />
      <Compile Include="Assets\scripts\SwordController.cs" />
      <Compile Include="Assets\scripts\Variables.cs" />
-     <Compile Include="Assets\scripts\bocadilloController.cs" />
-     <Compile Include="Assets\scripts\cameraController.cs" />
-     <Compile Include="Assets\scripts\generalController.cs" />
-     <Compile Include="Assets\scripts\introController.cs" />
-     <Compile Include="Assets\scripts\mainMenu.cs" />
-     <Compile Include="Assets\scripts\monsterBlueController.cs" />
-     <Compile Include="Assets\scripts\playerController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

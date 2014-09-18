@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class introController : MonoBehaviour {
+public class IntroController : MonoBehaviour {
 	private float startTime,animDuration,time,changeTime,splashTime,timeAnim;
 	private GameObject water;
 	private GameObject blackScreen;
