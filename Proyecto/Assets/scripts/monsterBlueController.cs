@@ -13,6 +13,7 @@ public class MonsterBlueController : MonoBehaviour
     private Vector3 from, to;
     private float hitTime = 0.175f;
     private int lives;
+    public GameObject blood;
     // Use this for initialization
     void Start()
     {
@@ -137,6 +138,7 @@ public class MonsterBlueController : MonoBehaviour
                 renderer.enabled = false;
                 timeDead = Time.time;
                 dead = true;
+                GameObject.Instantiate(blood, transform.position, Quaternion.identity);
             }
         }
         if (!hitted)

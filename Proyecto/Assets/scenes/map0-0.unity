@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edad816899ef1354989ee82e9e77f20d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blood: {fileID: 100000, guid: aae23787c47bf2c4e8f4bb7e6f20f04f, type: 2}
 --- !u!50 &6845982
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -393,7 +394,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300030, guid: c46a7ec2906417d43873f3980a45f795, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &114715010
