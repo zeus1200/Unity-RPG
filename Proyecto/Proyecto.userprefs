@@ -1,15 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\MonsterBlueController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\PlayerController.cs">
     <Files>
-      <File FileName="Assets\scripts\BloodController.cs" Line="18" Column="1" />
+      <File FileName="Assets\scripts\Variables.cs" Line="11" Column="43" />
+      <File FileName="Assets\scripts\SceneChangeTrigger.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\GeneralController.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\PlayerController.cs" Line="25" Column="69" />
       <File FileName="Assets\scripts\CameraController.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Variables.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\PlayerController.cs" Line="34" Column="36" />
-      <File FileName="Assets\scripts\MonsterBlueController.cs" Line="16" Column="28" />
       <File FileName="Assets\scripts\MapChangeTrigger.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\SwordController.cs" Line="1" Column="1" />
-      <File FileName="..\..\..\..\Dropbox\Picaomuere\Cosas\monsterBlueController.cs" Line="6" Column="27" />
+      <File FileName="Assets\scripts\MainMenu.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

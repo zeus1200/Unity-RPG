@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e344c981d753c04290b4dbfb7780aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  generalController: {fileID: 100000, guid: 8f5f9353db05bcb4eba09d81114e657c, type: 2}
   stylePlay:
     m_Name: 
     m_Normal:

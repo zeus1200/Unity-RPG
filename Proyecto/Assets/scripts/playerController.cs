@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
         mapName = Variables.mapName;
         mapChange = false;
         animTime = 0.5f;
+        animator.SetInteger("direction", Variables.playerDirection);
 
     }
     // Update is called once per frame
@@ -33,6 +34,10 @@ public class PlayerController : MonoBehaviour
                 Time.timeScale=1;
             }else{Time.timeScale=0;}
             pause=!pause;
+        }
+        if (Variables.changeScene)
+        {
+            mapName = Variables.mapName;
         }
 
         if (mapName != Variables.mapName)
@@ -67,6 +72,7 @@ public class PlayerController : MonoBehaviour
             }
         
         }
+       
 
         if (mapChange)
         {
@@ -77,13 +83,13 @@ public class PlayerController : MonoBehaviour
 
             } else if (toMap.transform.position.x < fromMap.transform.position.x)
             {
-                to2 = new Vector3(toMap.transform.position.x + toMap.renderer.bounds.size.x / 2f - 0.23f, from2.y, from2.z);
+                to2 = new Vector3(toMap.transform.position.x + toMap.renderer.bounds.size.x / 2f - 0.23f, from2.x, from2.z);
             } else if (toMap.transform.position.y > fromMap.transform.position.y)
             {
-                to2 = new Vector3(toMap.transform.position.y - toMap.renderer.bounds.size.y / 2f + 0.23f, from2.y, from2.z);
+                to2 = new Vector3( from2.x,toMap.transform.position.y - toMap.renderer.bounds.size.y / 2f + 0.23f, from2.z);
             } else
             {
-                to2 = new Vector3(toMap.transform.position.y + toMap.renderer.bounds.size.y / 2f - 0.23f, from2.y, from2.z);
+                to2 = new Vector3( from2.x,toMap.transform.position.y + toMap.renderer.bounds.size.y / 2f - 0.23f, from2.z);
             }
             
             transform.position = Vector3.Slerp(from2, to2, (Time.time - time2) / animTime);

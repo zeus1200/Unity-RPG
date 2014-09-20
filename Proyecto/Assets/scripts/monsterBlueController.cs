@@ -27,7 +27,10 @@ public class MonsterBlueController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (player == null)
+        {
+            player = GameObject.Find("player");
+        }
         //rigidbody2D.mass = 999999f;
         //transform.position +=0*new Vector3 (Random.Range(-1,2), Random.Range(-1,2), 0) * Time.deltaTime * direccion;
         if (dead && (Time.time - timeDead >= 5f))

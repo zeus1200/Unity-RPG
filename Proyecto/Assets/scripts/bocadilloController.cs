@@ -20,6 +20,10 @@ public class BocadilloController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (player == null)
+        {
+            player = GameObject.Find("player");
+        }
 		float aux=1000f;
 		min = DISTANCE*2f;
 		foreach (GameObject i in npcs) {

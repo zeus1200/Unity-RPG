@@ -4,6 +4,9 @@ using System.Collections;
 public class MainMenu : MonoBehaviour {
 
 //	public Texture backgroundTexture;
+
+    public GameObject generalController;
+
 	public GUIStyle stylePlay;
 	public GUIStyle styleOptions;
 	public GUIStyle styleExit;
