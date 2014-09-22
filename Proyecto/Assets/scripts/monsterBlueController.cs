@@ -13,12 +13,12 @@ public class MonsterBlueController : MonoBehaviour
     private Vector3 from, to;
     private float hitTime = 0.175f;
     private int lives;
-    public GameObject blood;
+   // public GameObject blood;
     // Use this for initialization
     void Start()
     {
         animator = this.GetComponent<Animator>();
-        player = GameObject.Find("player");
+       // player = GeneralController.DefaultController().getPlayer();
         speed = 1f;
         dead = false;
         lives = 3;
@@ -29,7 +29,7 @@ public class MonsterBlueController : MonoBehaviour
     {
         if (player == null)
         {
-            player = GameObject.Find("player");
+            player = GeneralController.DefaultController().getPlayer();
         }
         //rigidbody2D.mass = 999999f;
         //transform.position +=0*new Vector3 (Random.Range(-1,2), Random.Range(-1,2), 0) * Time.deltaTime * direccion;
@@ -141,7 +141,7 @@ public class MonsterBlueController : MonoBehaviour
                 renderer.enabled = false;
                 timeDead = Time.time;
                 dead = true;
-                GameObject.Instantiate(blood, transform.position, Quaternion.identity);
+                GameObject.Instantiate(Resources.Load("prefabs/Blood"), transform.position, Quaternion.identity);
             }
         }
         if (!hitted)

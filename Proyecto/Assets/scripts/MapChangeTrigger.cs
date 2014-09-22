@@ -28,7 +28,8 @@ public class MapChangeTrigger : MonoBehaviour
             } else
             {
                 Variables.mapName = map1;
-            }   
+            }  
+            NotificationCenter.DefaultCenter().PostNotification(this,"mapChanged");
         }
         
     }

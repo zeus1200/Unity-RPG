@@ -25,8 +25,8 @@ public class SceneChangeTrigger : MonoBehaviour
             Variables.posX = posX;
             Variables.posY = posY;
             Variables.mapName = mapName;
-            Variables.changeScene = true;
-            Variables.playerDirection=GameObject.Find("player").GetComponent<Animator>().GetInteger("direction");
+            //Variables.changeScene = true;
+          //  Variables.playerDirection=GameObject.Find("player").GetComponent<Animator>().GetInteger("direction");
             Application.LoadLevel(scene);    
         }
         
