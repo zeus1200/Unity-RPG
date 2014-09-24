@@ -7,6 +7,7 @@ public class BocadilloController : MonoBehaviour
     private GameObject[] npcs;
     private GameObject npc;
     private const float DISTANCE = 0.5f;
+    private NpcController script;
     //private GameObject bocadillo;
     private float min;
     // Use this for initialization
@@ -14,6 +15,7 @@ public class BocadilloController : MonoBehaviour
     {
         // player = GeneralController.DefaultController().getPlayer();
         NotificationCenter.DefaultCenter().AddObserver(this, "sceneChanged");
+        NotificationCenter.DefaultCenter().AddObserver(this, "playerWannaTalk");
         //bocadillo = GameObject.FindGameObjectWithTag("Bocadillo");
         renderer.enabled = false;
         //bocadillo.SetActive (false);
@@ -54,6 +56,7 @@ public class BocadilloController : MonoBehaviour
             } else
             {
                 renderer.enabled = false;
+                npc = null;
             }
         }
     }
@@ -62,4 +65,24 @@ public class BocadilloController : MonoBehaviour
     {
         npcs = GameObject.FindGameObjectsWithTag("TalkingNpc");
     }
+
+    void playerWannaTalk(Notification notification)
+    {
+        if (npc != null)
+        {
+            string text;
+
+            script = npc.gameObject.GetComponent("NpcController") as NpcController;
+            text = script.getText();
+            if (text != "")
+            {
+                Variables.text=text;
+                NotificationCenter.DefaultCenter().PostNotification(this, "drawText");
+            } else
+            {
+                NotificationCenter.DefaultCenter().PostNotification(this, "hideText");
+            }
+        }
+    }
+
 }

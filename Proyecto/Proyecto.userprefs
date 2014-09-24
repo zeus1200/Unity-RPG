@@ -1,13 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\PlayerController.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NpcController.cs">
     <Files>
-      <File FileName="Assets\scripts\NpcController.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\MonsterBlueController.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\PlayerController.cs" Line="189" Column="47" />
-      <File FileName="Assets\scripts\GeneralController.cs" Line="64" Column="40" />
-      <File FileName="Assets\scripts\BocadilloController.cs" Line="55" Column="10" />
-      <File FileName="Assets\scripts\StartScene.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character.cs" Line="36" Column="14" />
+      <File FileName="Assets\Scripts\MonsterBlueController.cs" Line="88" Column="6" />
+      <File FileName="Assets\Scripts\NpcController.cs" Line="45" Column="50" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="130" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

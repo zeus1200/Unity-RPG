@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NpcController : MonoBehaviour
+public class NpcController : Character
 {
-
+    /// <summary>
+    /// //flecha hacia abajo &#9660;
+    /// </summary>
     private float time;
     private GameObject player;
-    private float speed;
-    private Animator animator;
+    public string speakText;
+    private ArrayList text;
+    private int counter;
 
     // Use this for initialization
     void Start()
@@ -15,6 +18,61 @@ public class NpcController : MonoBehaviour
         animator = this.GetComponent<Animator>();
         //player = GameObject.Find ("player");
         speed = 1f;
+        counter = 0;
+        text=new ArrayList();
+    }
+    
+    // Update is called once per frame
+    void Update()
+    {
+        
+        if (player == null)
+        {
+            player = GeneralController.DefaultController().getPlayer();
+        }
+
+        float v = 0;
+        float h = 0;
+        float xDistance = player.transform.position.x - transform.position.x;
+        float yDistance = player.transform.position.y - transform.position.y;
+      
+        ManageMovement(h, v);
+  
+    }
+
+    public string getText()
+    {
+        string auxText = text[counter].ToString();
+        counter++;
+        if (counter >= text.Count)
+        {
+            counter = 0;
+        }
+        return auxText;
+    }
+
+}
+
+/*using UnityEngine;
+using System.Collections;
+
+public class NpcController : MonoBehaviour
+{
+
+    private float time;
+    private GameObject player;
+    private float speed;
+    private Animator animator;
+    public string[] speakText;
+    private int counter;
+
+    // Use this for initialization
+    void Start()
+    {
+        animator = this.GetComponent<Animator>();
+        //player = GameObject.Find ("player");
+        speed = 1f;
+        counter = 0;
     }
     
     // Update is called once per frame
@@ -76,4 +134,15 @@ public class NpcController : MonoBehaviour
         }
     }
 
-}
+    public string getText()
+    {
+        string text=speakText[counter];
+        counter++;
+        if (counter >= speakText.Length)
+        {
+            counter=0;
+        }
+        return text;
+    }
+
+}*/

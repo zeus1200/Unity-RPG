@@ -46,21 +46,24 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\scripts\BloodController.cs" />
-     <Compile Include="Assets\scripts\BocadilloController.cs" />
-     <Compile Include="Assets\scripts\CameraController.cs" />
-     <Compile Include="Assets\scripts\GeneralController.cs" />
-     <Compile Include="Assets\scripts\IntroController.cs" />
-     <Compile Include="Assets\scripts\MainMenu.cs" />
-     <Compile Include="Assets\scripts\MapChangeTrigger.cs" />
-     <Compile Include="Assets\scripts\MonsterBlueController.cs" />
-     <Compile Include="Assets\scripts\NotificationCenter.cs" />
-     <Compile Include="Assets\scripts\NpcController.cs" />
-     <Compile Include="Assets\scripts\PlayerController.cs" />
-     <Compile Include="Assets\scripts\SceneChangeTrigger.cs" />
-     <Compile Include="Assets\scripts\StartScene.cs" />
-     <Compile Include="Assets\scripts\SwordController.cs" />
-     <Compile Include="Assets\scripts\Variables.cs" />
+     <Compile Include="Assets\Scripts\BloodController.cs" />
+     <Compile Include="Assets\Scripts\BocadilloController.cs" />
+     <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\Character.cs" />
+     <Compile Include="Assets\Scripts\GUITextController.cs" />
+     <Compile Include="Assets\Scripts\GeneralController.cs" />
+     <Compile Include="Assets\Scripts\IntroController.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\MapChangeTrigger.cs" />
+     <Compile Include="Assets\Scripts\MonsterBlueController.cs" />
+     <Compile Include="Assets\Scripts\NotificationCenter.cs" />
+     <Compile Include="Assets\Scripts\NpcController.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\SceneChangeTrigger.cs" />
+     <Compile Include="Assets\Scripts\StartScene.cs" />
+     <Compile Include="Assets\Scripts\SwordController.cs" />
+     <Compile Include="Assets\Scripts\Variables.cs" />
+     <Compile Include="Assets\Scripts\textBackgroundController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

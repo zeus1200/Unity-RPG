@@ -6,11 +6,15 @@ public class GeneralController : MonoBehaviour
     private GameObject player;
     private GameObject mainCamera;
     private GameObject bocadillo;
+    private GameObject textBackground;
+    private GameObject textGUI;
     private bool pause=false;
     // Use this for initialization
     void Start()
     {
         NotificationCenter.DefaultCenter().AddObserver(this, "sceneChanged");
+        NotificationCenter.DefaultCenter().AddObserver(this, "drawText");
+        NotificationCenter.DefaultCenter().AddObserver(this, "hideText");
     }
 
 
@@ -64,6 +68,18 @@ public class GeneralController : MonoBehaviour
             DontDestroyOnLoad(bocadillo);
         }
 
+        if (textBackground == null)
+        {
+            textBackground = GameObject.Instantiate(Resources.Load("prefabs/TextBackground"))as GameObject;
+            DontDestroyOnLoad(textBackground);
+        }
+
+        if (textGUI == null)
+        {
+            textGUI = GameObject.Instantiate(Resources.Load("prefabs/GUIText"))as GameObject;
+            DontDestroyOnLoad(textGUI);
+        }
+
     }
 
     public GameObject getPlayer()
@@ -71,58 +87,16 @@ public class GeneralController : MonoBehaviour
         return player;
     }
 
+
+
+    void drawText(Notification notification)
+    {
+        Time.timeScale = 0;
+    }
+    
+    void hideText(Notification notification)
+    {
+        Time.timeScale = 1;
+    }
+
 } 
-
-
-/*  void Start()
-    {
-        player = GameObject.Find("player");
-        if (player != null)
-        {
-            player.transform.position = new Vector3(Variables.posX, Variables.posY, 0);
-        }
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        if (player == null)
-        {
-            player = GameObject.Find("player");
-            player.transform.position = new Vector3(Variables.posX, Variables.posY, 0);
-        }
-
-    }
-}*/
-
-/*
-using UnityEngine;
-using System.Collections;
-
-public class GeneralController : MonoBehaviour
-{
-    private GameObject player;
-    private GameObject mainCamera;
-    // Use this for initialization
-
-    void Start()
-    {
-        player = GameObject.Find("player");
-        if (player != null)
-        {
-            player.transform.position = new Vector3(Variables.posX, Variables.posY, 0);
-        }
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        if (player == null)
-        {
-            player = GameObject.Find("player");
-            player.transform.position = new Vector3(Variables.posX, Variables.posY, 0);
-        }
-
-    }
-}
-*/
