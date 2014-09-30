@@ -702,9 +702,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33af2ce6b6715894da5149f88b2eafd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speakText:
-  - asdf
-  - sdfgh
+  speakText: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque
+    risus in pretium volutpat.
 --- !u!1 &1328689571
 GameObject:
   m_ObjectHideFlags: 0

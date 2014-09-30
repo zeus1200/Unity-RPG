@@ -51,8 +51,8 @@ GUIText:
   m_Text: 
   m_Anchor: 3
   m_Alignment: 0
-  m_PixelOffset: {x: -215.389999, y: -175.630005}
-  m_LineSpacing: 1
+  m_PixelOffset: {x: -215.389999, y: -190}
+  m_LineSpacing: 1.25
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: 9f230c707824c1248a7e1e4fe1e4b229, type: 3}
   m_Material: {fileID: 0}
