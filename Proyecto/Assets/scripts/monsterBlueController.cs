@@ -11,6 +11,8 @@ public class MonsterBlueController : Character
     private Vector3 from, to;
     private float hitTime = 0.175f;
     private int lives;
+    private float movementTime;
+    private Vector2 movement;
     // public GameObject blood;
     // Use this for initialization
     void Start()
@@ -20,6 +22,7 @@ public class MonsterBlueController : Character
         speed = 1f;
         dead = false;
         lives = 3;
+        movementTime=0;
     }
     
     // Update is called once per frame
@@ -44,8 +47,8 @@ public class MonsterBlueController : Character
             float h = 0;
             float xDistance = player.transform.position.x - transform.position.x;
             float yDistance = player.transform.position.y - transform.position.y;
-            if (Vector3.Distance(transform.position, player.transform.position) < ATTACKDISTANCE)
-            {
+            if (Vector3.Distance(transform.position, player.transform.position) <= ATTACKDISTANCE)
+            { speed=1f;
                 
                 if (xDistance > 0.1f)
                 {
@@ -64,10 +67,27 @@ public class MonsterBlueController : Character
                     v = speed * (-1f) * Time.deltaTime;
                 }
 
-
+                ManageMovement(h, v);
                 
+            }else{
+                speed=0.75f;
+                if (movementTime > 0.5f)
+                {
+                    movement = Vector2.zero;
+                    
+                    if (movementTime > 1)
+                    {
+                        movement = generateMovement();
+                        movementTime = 0;
+                    }
+                }
+                
+                ManageMovement(movement.x * speed * Time.deltaTime, movement.y * speed * Time.deltaTime);
+                movementTime += Time.deltaTime;
             }
-            ManageMovement(h, v);
+
+
+
 
             
             if (hitted)
@@ -90,7 +110,7 @@ public class MonsterBlueController : Character
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name == "sword")
-        {
+        { 
             lives--;
             if (lives <= 0)
             {
@@ -100,37 +120,37 @@ public class MonsterBlueController : Character
                 dead = true;
                 GameObject.Instantiate(Resources.Load("prefabs/Blood"), transform.position, Quaternion.identity);
             }
-        }
-        if (!hitted)
-        {
+        
+            if (!hitted)
+            {
 
-            hitted = true;
-            timeHit = Time.time;
-            from = transform.position;
-            float xDistance = other.transform.parent.transform.position.x - transform.position.x;
-            float yDistance = other.transform.parent.transform.position.y - transform.position.y;
-            if (Mathf.Abs(xDistance) > Mathf.Abs(yDistance))
-            {
-                if (xDistance < 0)
+                hitted = true;
+                timeHit = Time.time;
+                from = transform.position;
+                float xDistance = other.transform.parent.transform.position.x - transform.position.x;
+                float yDistance = other.transform.parent.transform.position.y - transform.position.y;
+                if (Mathf.Abs(xDistance) > Mathf.Abs(yDistance))
                 {
-                    to = new Vector3(from.x + 0.32f, from.y, from.z);
+                    if (xDistance < 0)
+                    {
+                        to = new Vector3(from.x + 0.32f, from.y, from.z);
+                    } else
+                    {
+                        to = new Vector3(from.x - 0.32f, from.y, from.z);
+                    }
                 } else
                 {
-                    to = new Vector3(from.x - 0.32f, from.y, from.z);
-                }
-            } else
-            {
-                if (yDistance < 0)
-                {
-                    to = new Vector3(from.x, from.y + 0.32f, from.z);
-                } else
-                {
-                    to = new Vector3(from.x, from.y - 0.32f, from.z);
+                    if (yDistance < 0)
+                    {
+                        to = new Vector3(from.x, from.y + 0.32f, from.z);
+                    } else
+                    {
+                        to = new Vector3(from.x, from.y - 0.32f, from.z);
+                    }
                 }
             }
+
         }
-
-
     }
 }
 

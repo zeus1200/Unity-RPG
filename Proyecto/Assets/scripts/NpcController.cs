@@ -5,39 +5,52 @@ public class NpcController : Character
 {
 
     private const int maxStingLenght = 38;
-    private float time;
-    private GameObject player;
+    private float time, movementTime;
     public string speakText;
     private ArrayList textArrayList;
     private int counter;
+    private Vector2 movement;
+    public bool movable, speakable;
+    public int direction;
 
     // Use this for initialization
     void Start()
     {
         animator = this.GetComponent<Animator>();
-        //player = GameObject.Find ("player");
-        speed = 1f;
+        speed = 0.5f;
         counter = 0;
         textArrayList = new ArrayList();
-        fillArrayList();
+        if (speakable)
+        {
+            movementTime = 0;
+            fillArrayList();
+        }
+        if (!movable)
+        {
+            animator.SetInteger("direction", direction);
+        } 
     }
     
     // Update is called once per frame
     void Update()
     {
-        
-        if (player == null)
+       
+        if (movable)
         {
-            player = GeneralController.DefaultController().getPlayer();
-        }
+            if (movementTime > 0.5f)
+            {
+                movement = Vector2.zero;
+           
+                if (movementTime > 1)
+                {
+                    movement = generateMovement();
+                    movementTime = 0;
+                }
+            }
 
-        float v = 0;
-        float h = 0;
-        float xDistance = player.transform.position.x - transform.position.x;
-        float yDistance = player.transform.position.y - transform.position.y;
-      
-        ManageMovement(h, v);
-  
+            ManageMovement(movement.x * speed * Time.deltaTime, movement.y * speed * Time.deltaTime);
+            movementTime += Time.deltaTime;
+        }
     }
 
     public string getText()
@@ -51,7 +64,7 @@ public class NpcController : Character
         return auxText;
     }
 
-    private void fillArrayList()
+    protected void fillArrayList()
     {
         int counter = 0;
         bool isSecondLine = false;
@@ -63,7 +76,7 @@ public class NpcController : Character
             if (s1.Trim() != "")
             {
                 split2 = speakText.Split();
-                print(split2.Length);
+                //print(split2.Length);
                 foreach (string s2 in split2)
                 {
                     if (s2.Trim() != "")
@@ -73,8 +86,8 @@ public class NpcController : Character
                             if ((aux.Length + s2.Length > 38) && (!isSecondLine))
                             {
                                 isSecondLine = true;
-                                aux = aux.Insert(aux.Length, "\n" + s2+" ");
-                                counter+=s2.Length+1;
+                                aux = aux.Insert(aux.Length, "\n" + s2 + " ");
+                                counter += s2.Length + 1;
                             } else if (isSecondLine)
                             {
                                 if (counter + s2.Length > 38)
@@ -108,15 +121,7 @@ public class NpcController : Character
             textArrayList.Add("");
         }
 
-
-        //textArrayList.Add(Variables.textNpc1);
-        for (int i = 0; i<textArrayList.Count; i++)
-        {
-            print(textArrayList [i]);
-        }
     }
-
-   
 
 }
 

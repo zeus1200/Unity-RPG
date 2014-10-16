@@ -6,6 +6,7 @@ public class Character : MonoBehaviour
 
     protected float speed;
     protected Animator animator;
+
     // Use this for initialization
     void Start()
     {
@@ -37,22 +38,28 @@ public class Character : MonoBehaviour
     {
         if (animator)
         {
-            if ((v > 0) && (v > h))
+            if ((v > 0) && (v >= h))
             {
                 animator.SetInteger("direction", 1);
             }
-            if ((h > 0) && (v < h))
+            if ((h > 0) && (v <= h))
             {
                 animator.SetInteger("direction", 2);
             }
-            if ((v < 0) && (v < h))
+            if ((v < 0) && (v <= h))
             {
                 animator.SetInteger("direction", 3);
             }
-            if ((h < 0) && (v > h))
+            if ((h < 0) && (v >= h))
             {
                 animator.SetInteger("direction", 4);
             }
         }
+    }
+
+    protected Vector2 generateMovement(){
+        float h = Random.Range(-1, 2);
+        float v = Random.Range(-1, 2);
+        return new Vector2(h, v);
     }
 }

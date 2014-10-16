@@ -13,6 +13,8 @@ public class PlayerController : Character
     private float time2;
     private Vector3 from2, to2;
     private bool attacking = false;
+    private Vector2 vector = Vector2.zero;
+    private Vector2 playerTransform1, playerTransform2;
     // Use this for initialization
     void Start()
     {
@@ -31,6 +33,7 @@ public class PlayerController : Character
     // Update is called once per frame
     void Update()
     {
+
 
         /* if (Variables.changeScene)
         {
@@ -66,7 +69,47 @@ public class PlayerController : Character
             float h = speed * Input.GetAxis("Horizontal") * Time.deltaTime;
             if (!attacking)
             {
-                ManageMovement(h, v);
+                playerTransform1 = transform.position;
+                playerTransform2 = transform.position;
+                switch (animator.GetInteger("direction"))
+                {
+                    case 1:
+                        playerTransform1 = new Vector2(playerTransform1.x + 0.16f, playerTransform1.y + 0.17f);
+                        playerTransform2 = new Vector2(playerTransform2.x - 0.16f, playerTransform2.y + 0.17f);
+                        vector = transform.up;
+                        break;
+                    case 2:
+                        playerTransform1 = new Vector2(playerTransform1.x + 0.17f, playerTransform1.y + 0.16f);
+                        playerTransform2 = new Vector2(playerTransform2.x + 0.17f, playerTransform2.y - 0.16f);
+                        vector = transform.right;
+                        break;
+                    case 3:
+                        playerTransform1 = new Vector2(playerTransform1.x + 0.16f, playerTransform1.y - 0.17f);
+                        playerTransform2 = new Vector2(playerTransform2.x - 0.16f, playerTransform2.y - 0.17f);
+                        vector = -transform.up;
+                        break;
+                    case 4:
+                        playerTransform1 = new Vector2(playerTransform1.x - 0.17f, playerTransform1.y + 0.16f);
+                        playerTransform2 = new Vector2(playerTransform2.x - 0.17f, playerTransform2.y - 0.16f);
+                        vector = -transform.right;
+                        break;
+                        
+                }
+                RaycastHit2D hit1 = Physics2D.Raycast(playerTransform1, vector, 0.03f);
+                RaycastHit2D hit2 = Physics2D.Raycast(playerTransform2, vector, 0.03f);
+                if (((hit1.collider != null) && (!hit1.collider.isTrigger)) || ((hit2.collider != null) && (!hit2.collider.isTrigger)))
+                {
+                    if (((animator.GetInteger("direction") == 1) && (!Input.GetKey(KeyCode.UpArrow))) || ((animator.GetInteger("direction") == 2) && (!Input.GetKey(KeyCode.RightArrow))) || ((animator.GetInteger("direction") == 3) && (!Input.GetKey(KeyCode.DownArrow))) || ((animator.GetInteger("direction") == 4) && (!Input.GetKey(KeyCode.LeftArrow))))
+                    {
+                        ManageMovement(h, v);
+                    } else
+                    {
+                        animator.SetBool("moving", false);
+                    }
+                } else
+                {
+                    ManageMovement(h, v);
+                }
             } else if (transform.Find("sword").gameObject.activeSelf == false)
             {
                 attacking = false;
@@ -112,12 +155,54 @@ public class PlayerController : Character
 
         //print (this.renderer.bounds.size.x);
     }
-    
+
+    /*  void FixedUpdate()
+    {
+        Vector2 playerTransform = transform.position;
+       
+
+
+        switch (animator.GetInteger("direction"))
+        {
+            case 1:
+                playerTransform = new Vector2(playerTransform.x, playerTransform.y + 0.17f);
+                vector = transform.up;
+                break;
+            case 2:
+                playerTransform = new Vector2(playerTransform.x + 0.17f, playerTransform.y);
+                vector = transform.right;
+                break;
+            case 3:
+                playerTransform = new Vector2(playerTransform.x, playerTransform.y - 0.17f);
+                vector = -transform.up;
+                break;
+            case 4:
+                playerTransform = new Vector2(playerTransform.x - 0.17f, playerTransform.y);
+                vector = -transform.right;
+                break;
+
+        }
+        RaycastHit2D hit = Physics2D.Raycast(playerTransform, vector,0.03f);
+        if (hit.collider != null)
+        {
+            print(hit.transform.tag);
+            print(hit.distance);
+            if (hit.transform.tag != "Player")
+            {
+
+            }
+        }
+        //Debug.DrawRay(playerTransform, vector, Color.red);
+
+
+    }*/
+
     void OnCollisionEnter2D(Collision2D coll)
     {
         //return;
         if (coll.gameObject.tag == "Enemy")
         {
+           
             if (!hitted)
             {
                 hitted = true;

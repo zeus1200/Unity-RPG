@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour {
 	//	GUI.DrawTexture (new Rect (0, 0, 480, 480), backgroundTexture);
 		if (GUI.Button (new Rect ((Screen.width-width)/2f, Screen.height*0.4f-height/2f, width, height), "", stylePlay)) {
            
-			Application.LoadLevel("map0-0");
+			Application.LoadLevel("map");
 		}
 		if (GUI.Button (new Rect ((Screen.width-width)/2f, Screen.height*0.6f-height/2f, width, height), "", styleOptions)) {
 			

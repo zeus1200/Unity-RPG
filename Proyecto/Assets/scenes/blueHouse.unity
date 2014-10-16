@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b495b373a0668f4a9ac0455083a0d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: map0-0
+  scene: map
   mapName: 0-0
   posX: 2.56800008
   posY: .968999982
