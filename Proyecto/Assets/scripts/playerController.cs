@@ -74,23 +74,23 @@ public class PlayerController : Character
                 switch (animator.GetInteger("direction"))
                 {
                     case 1:
-                        playerTransform1 = new Vector2(playerTransform1.x + 0.16f, playerTransform1.y + 0.17f);
-                        playerTransform2 = new Vector2(playerTransform2.x - 0.16f, playerTransform2.y + 0.17f);
+                        playerTransform1 = new Vector2(playerTransform1.x + 0.12f, playerTransform1.y + 0.13f);
+                        playerTransform2 = new Vector2(playerTransform2.x - 0.12f, playerTransform2.y + 0.13f);
                         vector = transform.up;
                         break;
                     case 2:
-                        playerTransform1 = new Vector2(playerTransform1.x + 0.17f, playerTransform1.y + 0.16f);
-                        playerTransform2 = new Vector2(playerTransform2.x + 0.17f, playerTransform2.y - 0.16f);
+                        playerTransform1 = new Vector2(playerTransform1.x + 0.13f, playerTransform1.y + 0.12f);
+                        playerTransform2 = new Vector2(playerTransform2.x + 0.13f, playerTransform2.y - 0.12f);
                         vector = transform.right;
                         break;
                     case 3:
-                        playerTransform1 = new Vector2(playerTransform1.x + 0.16f, playerTransform1.y - 0.17f);
-                        playerTransform2 = new Vector2(playerTransform2.x - 0.16f, playerTransform2.y - 0.17f);
+                        playerTransform1 = new Vector2(playerTransform1.x + 0.12f, playerTransform1.y - 0.13f);
+                        playerTransform2 = new Vector2(playerTransform2.x - 0.12f, playerTransform2.y - 0.13f);
                         vector = -transform.up;
                         break;
                     case 4:
-                        playerTransform1 = new Vector2(playerTransform1.x - 0.17f, playerTransform1.y + 0.16f);
-                        playerTransform2 = new Vector2(playerTransform2.x - 0.17f, playerTransform2.y - 0.16f);
+                        playerTransform1 = new Vector2(playerTransform1.x - 0.13f, playerTransform1.y + 0.12f);
+                        playerTransform2 = new Vector2(playerTransform2.x - 0.13f, playerTransform2.y - 0.12f);
                         vector = -transform.right;
                         break;
                         
@@ -156,46 +156,7 @@ public class PlayerController : Character
         //print (this.renderer.bounds.size.x);
     }
 
-    /*  void FixedUpdate()
-    {
-        Vector2 playerTransform = transform.position;
-       
-
-
-        switch (animator.GetInteger("direction"))
-        {
-            case 1:
-                playerTransform = new Vector2(playerTransform.x, playerTransform.y + 0.17f);
-                vector = transform.up;
-                break;
-            case 2:
-                playerTransform = new Vector2(playerTransform.x + 0.17f, playerTransform.y);
-                vector = transform.right;
-                break;
-            case 3:
-                playerTransform = new Vector2(playerTransform.x, playerTransform.y - 0.17f);
-                vector = -transform.up;
-                break;
-            case 4:
-                playerTransform = new Vector2(playerTransform.x - 0.17f, playerTransform.y);
-                vector = -transform.right;
-                break;
-
-        }
-        RaycastHit2D hit = Physics2D.Raycast(playerTransform, vector,0.03f);
-        if (hit.collider != null)
-        {
-            print(hit.transform.tag);
-            print(hit.distance);
-            if (hit.transform.tag != "Player")
-            {
-
-            }
-        }
-        //Debug.DrawRay(playerTransform, vector, Color.red);
-
-
-    }*/
+   
 
     void OnCollisionEnter2D(Collision2D coll)
     {

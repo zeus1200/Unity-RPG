@@ -33,8 +33,7 @@ public class MonsterRedController : Character
         {
             player = GeneralController.DefaultController().getPlayer();
         }
-        //rigidbody2D.mass = 999999f;
-        //transform.position +=0*new Vector3 (Random.Range(-1,2), Random.Range(-1,2), 0) * Time.deltaTime * direccion;
+
         if (dead && (Time.time - timeDead >= 5f))
         {
             collider2D.enabled = true;
@@ -54,24 +53,23 @@ public class MonsterRedController : Character
                 {
                     if (shootTime == 0)
                     {
-                        GameObject fireball = null;
+
                         switch (animator.GetInteger("direction"))
                         {
                             case 1:
-                                fireball = GameObject.Instantiate(Resources.Load("prefabs/FireBall"), new Vector3(transform.position.x, transform.position.y + 0.126f, 0), Quaternion.identity)as GameObject;
+                                GameObject.Instantiate(Resources.Load("prefabs/FireBall"), new Vector3(transform.position.x, transform.position.y + 0.126f, 0), Quaternion.identity);
                                 break;
                             case 2:
-                                fireball = GameObject.Instantiate(Resources.Load("prefabs/FireBall"), new Vector3(transform.position.x + 0.15f, transform.position.y + 0.025f, 0), Quaternion.identity)as GameObject;
+                                GameObject.Instantiate(Resources.Load("prefabs/FireBall"), new Vector3(transform.position.x + 0.15f, transform.position.y + 0.025f, 0), Quaternion.identity);
                                 break;
                             case 3:
-                                fireball = GameObject.Instantiate(Resources.Load("prefabs/FireBall"), new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity)as GameObject;
+                                GameObject.Instantiate(Resources.Load("prefabs/FireBall"), new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
                                 break;
                             case 4:
-                                fireball = GameObject.Instantiate(Resources.Load("prefabs/FireBall"), new Vector3(transform.position.x - 0.15f, transform.position.y - 0.025f, 0), Quaternion.identity)as GameObject;
+                                GameObject.Instantiate(Resources.Load("prefabs/FireBall"), new Vector3(transform.position.x - 0.15f, transform.position.y - 0.025f, 0), Quaternion.identity);
                                 break;
                         }
                     }
-                    // fireball.transform.parent=transform;
                     shootTime += Time.deltaTime;
                     if (shootTime > 1f)
                     {

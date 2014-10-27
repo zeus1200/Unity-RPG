@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/Scenes/map.unity
   - enabled: 1
     path: Assets/Scenes/blueHouse.unity
+  - enabled: 1
+    path: Assets/Scenes/church.unity

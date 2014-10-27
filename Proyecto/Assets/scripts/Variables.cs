@@ -9,4 +9,9 @@ public class Variables
     public static float posY=0;
     public static string text = "";
     //public static string textNpc1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque risus in pretium volutpat.";
+
+    public static void asdf()
+    {
+       
+    }
 }

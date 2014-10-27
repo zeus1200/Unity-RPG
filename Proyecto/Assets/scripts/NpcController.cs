@@ -64,7 +64,7 @@ public class NpcController : Character
         return auxText;
     }
 
-    protected void fillArrayList()
+    private void fillArrayList()
     {
         int counter = 0;
         bool isSecondLine = false;
@@ -121,6 +121,12 @@ public class NpcController : Character
             textArrayList.Add("");
         }
 
+    }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+
+        movement = -1 * movement;
     }
 
 }
