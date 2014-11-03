@@ -12,8 +12,7 @@ public class MonsterRedController : Character
     private Vector3 from, to;
     private float hitTime = 0.175f;
     private int lives;
-    private float movementTime, shootTime;
-    private Vector2 movement;
+    private float shootTime;
     // public GameObject blood;
     // Use this for initialization
     void Start()
@@ -22,7 +21,7 @@ public class MonsterRedController : Character
         speed = 1f;
         dead = false;
         lives = 3;
-        movementTime = 0;
+
         shootTime = 0;
     }
     
@@ -102,19 +101,7 @@ public class MonsterRedController : Character
             } else
             {
                 speed = 0.75f;
-                if (movementTime > 0.5f)
-                {
-                    movement = Vector2.zero;
-                    
-                    if (movementTime > 1)
-                    {
-                        movement = generateMovement();
-                        movementTime = 0;
-                    }
-                }
-                
-                ManageMovement(movement.x * speed * Time.deltaTime, movement.y * speed * Time.deltaTime);
-                movementTime += Time.deltaTime;
+                move();
             }
             
             

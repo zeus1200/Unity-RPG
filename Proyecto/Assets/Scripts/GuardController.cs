@@ -7,21 +7,21 @@ public class GuardController : Character
     private const int maxStingLenght = 38;
     private float time;
     private int counter;
-    private Vector2 movement;
+    private Vector2 movementGuard;
     //public int direction;
     public enum Direction { Vertical = 0, Horizontal = 1}
     public Direction direction = Direction.Vertical;
     // Use this for initialization
     void Start()
-    {
+    { 
         animator = this.GetComponent<Animator>();
         speed = 1f;
         if (direction == 0)
         {
-            movement=new Vector2(transform.up.x,transform.up.y);
+            movementGuard=new Vector2(transform.up.x,transform.up.y);
         } else
         {
-            movement=new Vector2(transform.right.x,transform.right.y);
+            movementGuard=new Vector2(transform.right.x,transform.right.y);
         }
 
     }
@@ -32,7 +32,7 @@ public class GuardController : Character
         
        
             
-            ManageMovement(movement.x * speed * Time.deltaTime, movement.y * speed * Time.deltaTime);
+            ManageMovement(movementGuard.x * speed * Time.deltaTime, movementGuard.y * speed * Time.deltaTime);
 
     }
     
@@ -40,7 +40,7 @@ public class GuardController : Character
     void OnCollisionEnter2D(Collision2D coll)
     {
         
-        movement = -1 * movement;
+        movementGuard = -1 * movementGuard;
     }
     
 }

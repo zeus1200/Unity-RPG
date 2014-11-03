@@ -11,8 +11,7 @@ public class MonsterBlueController : Character
     private Vector3 from, to;
     private float hitTime = 0.175f;
     private int lives;
-    private float movementTime;
-    private Vector2 movement;
+
     // public GameObject blood;
     // Use this for initialization
     void Start()
@@ -22,7 +21,6 @@ public class MonsterBlueController : Character
         speed = 1f;
         dead = false;
         lives = 3;
-        movementTime=0;
     }
     
     // Update is called once per frame
@@ -71,19 +69,7 @@ public class MonsterBlueController : Character
                 
             }else{
                 speed=0.75f;
-                if (movementTime > 0.5f)
-                {
-                    movement = Vector2.zero;
-                    
-                    if (movementTime > 1)
-                    {
-                        movement = generateMovement();
-                        movementTime = 0;
-                    }
-                }
-                
-                ManageMovement(movement.x * speed * Time.deltaTime, movement.y * speed * Time.deltaTime);
-                movementTime += Time.deltaTime;
+                move();
             }
 
 

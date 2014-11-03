@@ -1,12 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GuardController.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MonsterRedController.cs">
     <Files>
-      <File FileName="Assets\Scripts\NpcController.cs" Line="134" Column="1" />
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="197" Column="6" />
-      <File FileName="Assets\Scripts\SceneChangeTrigger.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GuardController.cs" Line="24" Column="67" />
+      <File FileName="Assets\Scripts\NpcController.cs" Line="112" Column="6" />
+      <File FileName="Assets\Scripts\Character.cs" Line="88" Column="5" />
+      <File FileName="Assets\Scripts\MonsterBlueController.cs" Line="72" Column="24" />
+      <File FileName="Assets\Scripts\MonsterRedController.cs" Line="104" Column="24" />
+      <File FileName="Assets\Scripts\GuardController.cs" Line="44" Column="6" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="160" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

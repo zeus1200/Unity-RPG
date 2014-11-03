@@ -4,13 +4,17 @@ using System.Collections;
 public class Character : MonoBehaviour
 {
 
-    protected float speed;
+    protected float speed, movementTime, movementTimeRandomMove, movementTimeRandomStop;
     protected Animator animator;
+    protected Vector2 movement;
+
 
     // Use this for initialization
     void Start()
     {
-    
+        movementTime = 0;
+        movementTimeRandomStop = Random.Range(0.5f, 1f);
+        movementTimeRandomMove = Random.Range(1.5f, 2f);
     }
     
     // Update is called once per frame
@@ -57,9 +61,29 @@ public class Character : MonoBehaviour
         }
     }
 
-    protected Vector2 generateMovement(){
+    protected Vector2 generateMovement()
+    {
         float h = Random.Range(-1, 2);
         float v = Random.Range(-1, 2);
         return new Vector2(h, v);
     }
+
+    protected void move()
+    {
+        if (movementTime > movementTimeRandomStop)
+        {
+            movement = Vector2.zero;
+            
+            if (movementTime > movementTimeRandomMove)
+            {
+                movement = generateMovement();
+                movementTime = 0;
+                movementTimeRandomStop = Random.Range(0.5f, 1f);
+                movementTimeRandomMove = Random.Range(1.5f, 2f);
+            }
+        }
+        ManageMovement(movement.x * speed * Time.deltaTime, movement.y * speed * Time.deltaTime);
+        movementTime += Time.deltaTime;
+    }
+
 }

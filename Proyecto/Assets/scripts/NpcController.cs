@@ -5,11 +5,10 @@ public class NpcController : Character
 {
 
     private const int maxStingLenght = 38;
-    private float time, movementTime;
+    private float time;
     public string speakText;
     private ArrayList textArrayList;
     private int counter;
-    private Vector2 movement;
     public bool movable, speakable;
     public int direction;
 
@@ -22,13 +21,13 @@ public class NpcController : Character
         textArrayList = new ArrayList();
         if (speakable)
         {
-            movementTime = 0;
             fillArrayList();
         }
         if (!movable)
         {
             animator.SetInteger("direction", direction);
         } 
+
     }
     
     // Update is called once per frame
@@ -37,19 +36,8 @@ public class NpcController : Character
        
         if (movable)
         {
-            if (movementTime > 0.5f)
-            {
-                movement = Vector2.zero;
-           
-                if (movementTime > 1)
-                {
-                    movement = generateMovement();
-                    movementTime = 0;
-                }
-            }
+            move();
 
-            ManageMovement(movement.x * speed * Time.deltaTime, movement.y * speed * Time.deltaTime);
-            movementTime += Time.deltaTime;
         }
     }
 
