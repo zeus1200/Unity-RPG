@@ -1,22 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MonsterBlueController : Character
+public class MonsterBlueController : Enemy
 {
-    private float timeDead, timeHit;
+
     //private int direccion = 1;
     private const float ATTACKDISTANCE = 1f;
-    private GameObject player;
-    private bool dead, hitted;
-    private Vector3 from, to;
-    private float hitTime = 0.175f;
-    private int lives;
+    private const float DEATHTIME = 300f;
+
 
     // public GameObject blood;
     // Use this for initialization
     void Start()
     {
-        animator = this.GetComponent<Animator>();
+        base.Start();
         // player = GeneralController.DefaultController().getPlayer();
         speed = 1f;
         dead = false;
@@ -30,114 +27,72 @@ public class MonsterBlueController : Character
         {
             player = GeneralController.DefaultController().getPlayer();
         }
+       
         //rigidbody2D.mass = 999999f;
         //transform.position +=0*new Vector3 (Random.Range(-1,2), Random.Range(-1,2), 0) * Time.deltaTime * direccion;
-        if (dead && (Time.time - timeDead >= 5f))
-        {
-            collider2D.enabled = true;
-            renderer.enabled = true;
-            dead = false;
-            lives = 3;
-        } 
+         
         if (!dead)
         {
-            float v = 0;
-            float h = 0;
-            float xDistance = player.transform.position.x - transform.position.x;
-            float yDistance = player.transform.position.y - transform.position.y;
-            if (Vector3.Distance(transform.position, player.transform.position) <= ATTACKDISTANCE)
-            { speed=1f;
-                
-                if (xDistance > 0.1f)
-                {
-                    h = speed * (1f) * Time.deltaTime;
-                } else if (xDistance < -0.1f)
-                {
-                    h = speed * (-1f) * Time.deltaTime;
-                }
-                
-                
-                if (yDistance > 0.1f)
-                {
-                    v = speed * (1f) * Time.deltaTime;
-                } else if (yDistance < -0.1f)
-                {
-                    v = speed * (-1f) * Time.deltaTime;
-                }
-
-                ManageMovement(h, v);
-                
-            }else{
-                speed=0.75f;
-                move();
-            }
-
-
-
-
-            
-            if (hitted)
-            {
-                transform.position = Vector3.Slerp(from, to, (Time.time - timeHit) / hitTime);
-                if (Time.time - timeHit > hitTime)
-                {
-                    hitted = false;
-                }
-                
-            }
-        }
-
-
-
-
-    
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.name == "sword")
-        { 
-            lives--;
-            if (lives <= 0)
-            {
-                collider2D.enabled = false;
-                renderer.enabled = false;
-                timeDead = Time.time;
-                dead = true;
-                GameObject.Instantiate(Resources.Load("prefabs/Blood"), transform.position, Quaternion.identity);
-            }
-        
             if (!hitted)
             {
 
-                hitted = true;
-                timeHit = Time.time;
-                from = transform.position;
-                float xDistance = other.transform.parent.transform.position.x - transform.position.x;
-                float yDistance = other.transform.parent.transform.position.y - transform.position.y;
-                if (Mathf.Abs(xDistance) > Mathf.Abs(yDistance))
+                int h = 0;
+                int v = 0;
+                float xDistance = player.transform.position.x - transform.position.x;
+                float yDistance = player.transform.position.y - transform.position.y;
+                if (Vector3.Distance(transform.position, player.transform.position) <= ATTACKDISTANCE)
                 {
-                    if (xDistance < 0)
+                    speed = 1f;
+                
+                    if (xDistance > 0.1f)
                     {
-                        to = new Vector3(from.x + 0.32f, from.y, from.z);
-                    } else
+                        h = 1;
+                    } else if (xDistance < -0.1f)
                     {
-                        to = new Vector3(from.x - 0.32f, from.y, from.z);
+                        h = -1;
                     }
+                
+                
+                    if (yDistance > 0.1f)
+                    {
+                        v = 1;
+                    } else if (yDistance < -0.1f)
+                    {
+                        v = -1;
+                    }
+
+                    movement = new Vector2(h, v);
+                    ManageMovement(movement * speed);
+                
                 } else
                 {
-                    if (yDistance < 0)
-                    {
-                        to = new Vector3(from.x, from.y + 0.32f, from.z);
-                    } else
-                    {
-                        to = new Vector3(from.x, from.y - 0.32f, from.z);
-                    }
+                    speed = 0.75f;
+                    move();
+                }
+            } else
+            {
+                if (Time.time - timeHit > HITTIME)
+                {
+                    hitted = false;
+                } else
+                {
+                    rigid.velocity = attackDir * speed;
                 }
             }
-
+        }else if(Time.time-timeDead>DEATHTIME)
+        {
+            
+            collider2D.enabled = true;
+            renderer.enabled = true;
+            dead = false;
+            gameObject.transform.position=initPos;
+        }else
+        {
+            rigid.velocity=Vector2.zero;
         }
     }
+
+
 }
 
 

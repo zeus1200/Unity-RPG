@@ -5,16 +5,25 @@ public class Character : MonoBehaviour
 {
 
     protected float speed, movementTime, movementTimeRandomMove, movementTimeRandomStop;
-    protected Animator animator;
     protected Vector2 movement;
+    protected Animator animator;
+    protected Rigidbody2D rigid;
+    protected Vector2 attackDir;
+    protected const float HITTIME = 0.25f;
+
 
 
     // Use this for initialization
-    void Start()
+    protected void Start()
     {
+
+        animator = this.GetComponent<Animator>();
+        rigid = GetComponent<Rigidbody2D>();
         movementTime = 0;
         movementTimeRandomStop = Random.Range(0.5f, 1f);
         movementTimeRandomMove = Random.Range(1.5f, 2f);
+
+
     }
     
     // Update is called once per frame
@@ -22,22 +31,20 @@ public class Character : MonoBehaviour
     {
     
     }
-
-    protected void ManageMovement(float horizontal, float vertical)
+   
+    protected void ManageMovement(Vector2 vel)
     {
-        if (horizontal != 0f || vertical != 0f)
+        if (vel.x != 0f || vel.y != 0f)
         {
             animator.SetBool("moving", true);
-            animateWalk(horizontal, vertical);
+            animateWalk(vel.x, vel.y);
         } else
         {
             animator.SetBool("moving", false);
         }
-        Vector3 movement = new Vector3(horizontal, vertical, 0);
-        //rigidbody2D.velocity = movement;
-        transform.position += movement;
+        rigid.velocity = vel;
     }
-    
+
     protected void animateWalk(float h, float v)
     {
         if (animator)
@@ -82,8 +89,33 @@ public class Character : MonoBehaviour
                 movementTimeRandomMove = Random.Range(1.5f, 2f);
             }
         }
-        ManageMovement(movement.x * speed * Time.deltaTime, movement.y * speed * Time.deltaTime);
+        ManageMovement(movement * speed);
         movementTime += Time.deltaTime;
     }
 
+    protected void calculateAttackDirection(Transform other)
+    {
+        float xDistance = other.position.x - transform.position.x;
+        float yDistance = other.position.y - transform.position.y;
+        if (Mathf.Abs(xDistance) > Mathf.Abs(yDistance))
+        {
+            if (xDistance < 0)
+            {
+                attackDir = new Vector2(1, 0);
+            } else
+            {
+                attackDir = new Vector2(-1, 0);
+            }
+        } else
+        {
+            if (yDistance < 0)
+            {
+                attackDir = new Vector2(0, 1);
+            } else
+            {
+                attackDir = new Vector2(0, -1);
+            }
+        }
+        
+    }
 }

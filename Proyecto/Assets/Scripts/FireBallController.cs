@@ -33,14 +33,22 @@ public class FireBallController : MonoBehaviour
         transform.position += new Vector3(transform.up.x * speed * Time.deltaTime, transform.up.y * speed * Time.deltaTime, 0);
     }
 
-    void OnCollisionEnter2D(Collision2D coll)
+   /* void OnCollisionEnter2D(Collision2D coll)
+    {Debug.Log("colisionnooooooo");
+        if (coll.gameObject.tag != "Enemy")
+        {
+            GameObject.Destroy(transform.gameObject);
+        }     
+    }*/
+
+    void OnTriggerEnter2D(Collider2D other)
     {
+       /* if (other.gameObject.name == "sword")
+        {
+            GameObject.Destroy(transform.gameObject);
+        }*/
 
-        GameObject.Destroy(transform.gameObject);         
-    }
-
-    void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.name == "sword")
+        if (other.gameObject.tag != "Enemy")
         {
             GameObject.Destroy(transform.gameObject);
         }

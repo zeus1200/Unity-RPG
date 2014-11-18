@@ -84,6 +84,12 @@ public class GeneralController : MonoBehaviour
 
     public GameObject getPlayer()
     {
+
+        if (player == null)
+        {
+            player = GameObject.Instantiate(Resources.Load("prefabs/Player"), new Vector3(Variables.posX, Variables.posY, 0), Quaternion.identity)as GameObject;
+            DontDestroyOnLoad(player);
+        }
         return player;
     }
 

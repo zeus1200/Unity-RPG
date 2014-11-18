@@ -5,18 +5,13 @@ public class MapChangeTrigger : MonoBehaviour
 {
 
     public string map1, map2;
+    public enum Direction
+    {
+        Vertical = 0,
+        Horizontal = 1
+    }
+    public Direction direction;
     // Use this for initialization
-    void Start()
-    {
-    
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-    
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -29,7 +24,8 @@ public class MapChangeTrigger : MonoBehaviour
             {
                 Variables.mapName = map1;
             }  
-            NotificationCenter.DefaultCenter().PostNotification(this,"mapChanged");
+            Variables.changeMapDirection=(int)direction;
+            NotificationCenter.DefaultCenter().PostNotification(this, "mapChanged");
         }
         
     }

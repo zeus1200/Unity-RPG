@@ -11,11 +11,13 @@ public class NpcController : Character
     private int counter;
     public bool movable, speakable;
     public int direction;
+    private bool playerCollision;
 
     // Use this for initialization
     void Start()
     {
-        animator = this.GetComponent<Animator>();
+        base.Start();
+        playerCollision = false;
         speed = 0.5f;
         counter = 0;
         textArrayList = new ArrayList();
@@ -34,7 +36,7 @@ public class NpcController : Character
     void Update()
     {
        
-        if (movable)
+        if (movable&&!playerCollision)
         {
             move();
 
@@ -111,10 +113,28 @@ public class NpcController : Character
 
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag != "sword")
+        {
+       
+            movement = -1 * movement;
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D coll)
     {
+        if (coll.gameObject.tag == "Player")
+        {
+            rigid.isKinematic = true;
+            playerCollision=true;
+        } 
+    }
 
-        movement = -1 * movement;
+    void OnCollisionExit2D(Collision2D coll)
+    {
+        rigid.isKinematic = false;
+        playerCollision = false;
     }
 
 }

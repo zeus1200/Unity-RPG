@@ -50,6 +50,8 @@
      <Compile Include="Assets\Scripts\BocadilloController.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Character.cs" />
+     <Compile Include="Assets\Scripts\CinematicController.cs" />
+     <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\FireBallController.cs" />
      <Compile Include="Assets\Scripts\GUITextController.cs" />
      <Compile Include="Assets\Scripts\GeneralController.cs" />
