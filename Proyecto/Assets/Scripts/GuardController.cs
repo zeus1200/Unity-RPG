@@ -4,9 +4,9 @@ using System.Collections;
 public class GuardController : Character
 {
 
-    private const int maxStingLenght = 38;
-    private float time;
-    private int counter;
+   
+
+
     private Vector2 movementGuard;
     //public int direction;
     public enum Direction

@@ -12,6 +12,7 @@ public class NpcController : Character
     public bool movable, speakable;
     public int direction;
     private bool playerCollision;
+    public bool animated;
 
     // Use this for initialization
     void Start()
@@ -35,11 +36,13 @@ public class NpcController : Character
     // Update is called once per frame
     void Update()
     {
-       
-        if (movable&&!playerCollision)
+       if (!animated)
         {
-            move();
+            if (movable && !playerCollision)
+            {
+                move();
 
+            } 
         }
     }
 
@@ -127,14 +130,17 @@ public class NpcController : Character
         if (coll.gameObject.tag == "Player")
         {
             rigid.isKinematic = true;
-            playerCollision=true;
+            playerCollision = true;
         } 
     }
 
     void OnCollisionExit2D(Collision2D coll)
     {
-        rigid.isKinematic = false;
-        playerCollision = false;
+        if (coll.gameObject.tag == "Player")
+        {
+            rigid.isKinematic = false;
+            playerCollision = false;
+        }
     }
 
 }

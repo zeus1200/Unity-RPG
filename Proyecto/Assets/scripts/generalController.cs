@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 
 public class GeneralController : MonoBehaviour
@@ -91,6 +92,17 @@ public class GeneralController : MonoBehaviour
             DontDestroyOnLoad(player);
         }
         return player;
+    }
+
+    public GameObject getBocadillo()
+    {
+        
+        if (bocadillo == null)
+        {
+            bocadillo = GameObject.Instantiate(Resources.Load("prefabs/Bocadillo"))as GameObject;
+            DontDestroyOnLoad(bocadillo);
+        }
+        return bocadillo;
     }
 
 

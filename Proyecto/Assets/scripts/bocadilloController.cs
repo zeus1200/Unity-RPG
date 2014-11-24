@@ -29,10 +29,10 @@ public class BocadilloController : MonoBehaviour
         {
             player = GeneralController.DefaultController().getPlayer();
         }
-        if (npcs == null)
-        {
+
             npcs = GameObject.FindGameObjectsWithTag("TalkingNpc");
-        }
+            
+
         if (npcs != null)
         {
             float aux = 1000f;
@@ -61,10 +61,11 @@ public class BocadilloController : MonoBehaviour
         }
     }
 
-    void sceneChanged(Notification notification)
+  /*  void sceneChanged(Notification notification)
     {
         npcs = GameObject.FindGameObjectsWithTag("TalkingNpc");
-    }
+        npcs = null;
+    }*/
 
     void playerWannaTalk(Notification notification)
     {

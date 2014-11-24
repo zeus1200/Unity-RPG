@@ -93,7 +93,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &6845977
 Animator:
   serializedVersion: 3
@@ -836,6 +836,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
   m_RootGameObject: {fileID: 6845976}
@@ -882,6 +886,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
       propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1057,7 +1065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &417863828
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1401,6 +1409,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
   m_RootGameObject: {fileID: 1737058732}
@@ -1449,6 +1461,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
   m_RootGameObject: {fileID: 1177089890}
@@ -1473,7 +1489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &506697098
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1584,7 +1600,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &509363125
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1695,7 +1711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &542619445
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1806,7 +1822,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &575332650
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1941,6 +1957,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
   m_RootGameObject: {fileID: 506697097}
@@ -1987,6 +2007,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6100000, guid: bcb726e344687d44a9c337fba9aafcd6, type: 2}
       propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bcb726e344687d44a9c337fba9aafcd6, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2037,6 +2061,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bcb726e344687d44a9c337fba9aafcd6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcb726e344687d44a9c337fba9aafcd6, type: 2}
   m_RootGameObject: {fileID: 509363124}
@@ -2061,7 +2089,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &659401585
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -2222,7 +2250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &782652293
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -2412,6 +2440,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bcb726e344687d44a9c337fba9aafcd6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcb726e344687d44a9c337fba9aafcd6, type: 2}
   m_RootGameObject: {fileID: 869641437}
@@ -2458,6 +2490,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6100000, guid: bcb726e344687d44a9c337fba9aafcd6, type: 2}
       propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bcb726e344687d44a9c337fba9aafcd6, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2508,6 +2544,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bcb726e344687d44a9c337fba9aafcd6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcb726e344687d44a9c337fba9aafcd6, type: 2}
   m_RootGameObject: {fileID: 1151556297}
@@ -2532,7 +2572,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &869641438
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -2831,6 +2871,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
   m_RootGameObject: {fileID: 1787530853}
@@ -2855,7 +2899,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &928109254
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -3301,6 +3345,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
   m_RootGameObject: {fileID: 1519302084}
@@ -3325,7 +3373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1089943461
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -3436,7 +3484,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1151556298
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -3547,7 +3595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1177089891
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -3658,7 +3706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1180917394
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -3769,7 +3817,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1197824626
 Animator:
   serializedVersion: 3
@@ -4125,6 +4173,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
   m_RootGameObject: {fileID: 417863827}
@@ -4149,7 +4201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1284584183
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -4282,6 +4334,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
       propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4495,7 +4551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1519302085
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -4630,6 +4686,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
   m_RootGameObject: {fileID: 659401584}
@@ -4678,6 +4738,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bcb726e344687d44a9c337fba9aafcd6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcb726e344687d44a9c337fba9aafcd6, type: 2}
   m_RootGameObject: {fileID: 575332649}
@@ -4702,7 +4766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1599335144
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -4852,7 +4916,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1737058733
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -5060,7 +5124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1787530854
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -5291,6 +5355,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6100000, guid: bcb726e344687d44a9c337fba9aafcd6, type: 2}
       propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bcb726e344687d44a9c337fba9aafcd6, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5719,6 +5787,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bcb726e344687d44a9c337fba9aafcd6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcb726e344687d44a9c337fba9aafcd6, type: 2}
   m_RootGameObject: {fileID: 1599335143}
@@ -5905,6 +5977,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93fbbc789b6271b4f9fdcaa043a9adac, type: 2}
   m_RootGameObject: {fileID: 928109253}
@@ -6067,6 +6143,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6100000, guid: bcb726e344687d44a9c337fba9aafcd6, type: 2}
       propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bcb726e344687d44a9c337fba9aafcd6, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

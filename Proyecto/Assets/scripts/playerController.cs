@@ -160,7 +160,17 @@ public class PlayerController : Character
 
             //print (this.renderer.bounds.size.x);
             //ManageMovement(movement * speed);
+        } else
+        {
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                NotificationCenter.DefaultCenter().PostNotification(this, "playerWannaTalk");
+                
+            }
         }
+
+
     }
 
     private bool keyDown(KeyCode KC, bool Key)
@@ -217,6 +227,7 @@ public class PlayerController : Character
     {
         mapName = Variables.mapName;
         U = D = R = L = false;
+        rigid.velocity = Vector2.zero;
     }
 
     void mapChanged(Notification notification)

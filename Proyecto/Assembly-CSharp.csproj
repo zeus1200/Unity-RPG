@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BloodController.cs" />
      <Compile Include="Assets\Scripts\BocadilloController.cs" />
+     <Compile Include="Assets\Scripts\BossController.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Character.cs" />
      <Compile Include="Assets\Scripts\CinematicController.cs" />
