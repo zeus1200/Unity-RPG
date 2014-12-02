@@ -1,13 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CinematicController.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\Desktop\Pixie1\Pixie\Assets\Scripts\Timer.js">
     <Files>
-      <File FileName="Assets\Scripts\BossController.cs" Line="19" Column="13" />
-      <File FileName="Assets\Scripts\GuardController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MonsterRedController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CinematicController.cs" Line="117" Column="42" />
-      <File FileName="Assets\Scripts\BocadilloController.cs" Line="1" Column="1" />
+      <File FileName="..\..\..\..\Desktop\Pixie1\Pixie\Assets\Scripts\State.js" Line="1" Column="1" />
+      <File FileName="..\..\..\..\Desktop\Pixie1\Pixie\Assets\Scripts\Timer.js" Line="15" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

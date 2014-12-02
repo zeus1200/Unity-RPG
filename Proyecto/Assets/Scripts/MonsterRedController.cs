@@ -10,7 +10,7 @@ public class MonsterRedController : Enemy
     private const float DEATHTIME = 300f;
     // public GameObject blood;
     // Use this for initialization
-    void Start()
+    new void Start()
     {
         base.Start();
         speed = 1f;

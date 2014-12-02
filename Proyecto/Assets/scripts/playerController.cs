@@ -19,7 +19,7 @@ public class PlayerController : Character
     public bool animated;
 
     // Use this for initialization
-    void Start()
+    new void Start()
     {
         base.Start();
         speed = 1.5f;

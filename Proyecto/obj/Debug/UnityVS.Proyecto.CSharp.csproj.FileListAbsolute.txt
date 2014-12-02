@@ -1,0 +1,11 @@
+C:\Users\Pablo\Documents\GitHub\Unity-RPG\Proyecto\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll
+C:\Users\Pablo\Documents\GitHub\Unity-RPG\Proyecto\Temp\UnityVS_bin\Debug\Assembly-CSharp.pdb
+C:\Users\Pablo\Documents\GitHub\Unity-RPG\Proyecto\Temp\UnityVS_bin\Debug\UnityEditor.dll
+C:\Users\Pablo\Documents\GitHub\Unity-RPG\Proyecto\Temp\UnityVS_bin\Debug\UnityEngine.dll
+C:\Users\Pablo\Documents\GitHub\Unity-RPG\Proyecto\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+C:\Users\Pablo\Documents\GitHub\Unity-RPG\Proyecto\Temp\UnityVS_bin\Debug\UnityEngine.xml
+C:\Users\Pablo\Documents\GitHub\Unity-RPG\Proyecto\Temp\UnityVS_bin\Debug\UnityEditor.xml
+C:\Users\Pablo\Documents\GitHub\Unity-RPG\Proyecto\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+C:\Users\Pablo\Documents\GitHub\Unity-RPG\Proyecto\obj\Debug\UnityVS.Proyecto.CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Pablo\Documents\GitHub\Unity-RPG\Proyecto\obj\Debug\Assembly-CSharp.dll
+C:\Users\Pablo\Documents\GitHub\Unity-RPG\Proyecto\obj\Debug\Assembly-CSharp.pdb

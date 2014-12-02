@@ -4,7 +4,7 @@ using System.Collections;
 public class BossController :  Enemy {
     private Vector2 movementBoss;
 	// Use this for initialization 
-	void Start () {
+	new void Start () {
         base.Start();
         lives = 2;
         speed = 1f;

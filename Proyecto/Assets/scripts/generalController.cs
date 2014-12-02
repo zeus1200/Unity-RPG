@@ -7,10 +7,13 @@ public class GeneralController : MonoBehaviour
     private GameObject player;
     private GameObject mainCamera;
     private GameObject bocadillo;
-    private GameObject textBackground;
-    private GameObject textGUI;
-    private bool pause=false;
+   // private GameObject textBackground;
+    //private GameObject textGUI;
+    private GameObject GUI;
+    private bool pause = false;
     // Use this for initialization
+
+
     void Start()
     {
         NotificationCenter.DefaultCenter().AddObserver(this, "sceneChanged");
@@ -23,10 +26,12 @@ public class GeneralController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(pause){
-                Time.timeScale=1;
-            }else{Time.timeScale=0;}
-            pause=!pause;
+            if (pause)
+            {
+                Time.timeScale = 1;
+            }
+            else { Time.timeScale = 0; }
+            pause = !pause;
         }
     }
     private static GeneralController generalController;
@@ -42,7 +47,7 @@ public class GeneralController : MonoBehaviour
             generalController = notificationObject.AddComponent<GeneralController>();
             DontDestroyOnLoad(generalController);
         }
-        
+
         return generalController;
     }
 
@@ -50,36 +55,33 @@ public class GeneralController : MonoBehaviour
     {
         if (player == null)
         {
-            player = GameObject.Instantiate(Resources.Load("prefabs/Player"), new Vector3(Variables.posX, Variables.posY, 0), Quaternion.identity)as GameObject;
+            player = GameObject.Instantiate(Resources.Load("prefabs/Player"), new Vector3(Variables.posX, Variables.posY, 0), Quaternion.identity) as GameObject;
             DontDestroyOnLoad(player);
-        } else
+        }
+        else
         {
             player.transform.position = new Vector3(Variables.posX, Variables.posY, 0);
         }
 
         if (mainCamera == null)
         {
-            mainCamera = GameObject.Instantiate(Resources.Load("prefabs/Main Camera"))as GameObject;
+            mainCamera = GameObject.Instantiate(Resources.Load("prefabs/Main Camera")) as GameObject;
             DontDestroyOnLoad(mainCamera);
         }
 
         if (bocadillo == null)
         {
-            bocadillo = GameObject.Instantiate(Resources.Load("prefabs/Bocadillo"))as GameObject;
+            bocadillo = GameObject.Instantiate(Resources.Load("prefabs/Bocadillo")) as GameObject;
             DontDestroyOnLoad(bocadillo);
         }
 
-        if (textBackground == null)
+        if (GUI == null)
         {
-            textBackground = GameObject.Instantiate(Resources.Load("prefabs/TextBackground"))as GameObject;
-            DontDestroyOnLoad(textBackground);
+            GUI = GameObject.Instantiate(Resources.Load("prefabs/Canvas")) as GameObject;
+            DontDestroyOnLoad(GUI);
         }
 
-        if (textGUI == null)
-        {
-            textGUI = GameObject.Instantiate(Resources.Load("prefabs/GUIText"))as GameObject;
-            DontDestroyOnLoad(textGUI);
-        }
+      
 
     }
 
@@ -88,33 +90,21 @@ public class GeneralController : MonoBehaviour
 
         if (player == null)
         {
-            player = GameObject.Instantiate(Resources.Load("prefabs/Player"), new Vector3(Variables.posX, Variables.posY, 0), Quaternion.identity)as GameObject;
+            player = GameObject.Instantiate(Resources.Load("prefabs/Player"), new Vector3(Variables.posX, Variables.posY, 0), Quaternion.identity) as GameObject;
             DontDestroyOnLoad(player);
         }
         return player;
     }
-
-    public GameObject getBocadillo()
-    {
-        
-        if (bocadillo == null)
-        {
-            bocadillo = GameObject.Instantiate(Resources.Load("prefabs/Bocadillo"))as GameObject;
-            DontDestroyOnLoad(bocadillo);
-        }
-        return bocadillo;
-    }
-
 
 
     void drawText(Notification notification)
     {
         Time.timeScale = 0;
     }
-    
+
     void hideText(Notification notification)
     {
         Time.timeScale = 1;
     }
 
-} 
+}

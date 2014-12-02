@@ -12,7 +12,6 @@ public class CinematicController : MonoBehaviour
     private GameObject canvas;
     private Animator canvasAnim;
     private GameObject shine;
-    private GameObject bocadillo;
     private Animator shineAnim;
     private Vector3 playerFrom, playerTo, ladyFrom, ladyTo;
     private float time, timeShine;
@@ -36,7 +35,6 @@ public class CinematicController : MonoBehaviour
         shine = GameObject.Find("Shine");
 
         shineAnim = shine.GetComponent<Animator>();
-        bocadillo = GeneralController.DefaultController().getBocadillo();
         stopCinematic = true;
 
         //ladyAnim.SetBool("startAnim", true);
@@ -60,6 +58,7 @@ public class CinematicController : MonoBehaviour
     }
     
     // Update is called once per frame
+    
     void Update()
     {
         
@@ -96,7 +95,7 @@ public class CinematicController : MonoBehaviour
             {
                 bShine = false;
                 playerController.animated = false;
-                GameObject boss = GameObject.Instantiate(Resources.Load("prefabs/Boss"), new Vector3(0f, 0.6f, 0), Quaternion.identity)as GameObject;
+                GameObject.Instantiate(Resources.Load("prefabs/Boss"), new Vector3(0f, 0.6f, 0), Quaternion.identity);
                 GameObject.Destroy(lady);
                 GameObject.Destroy(shine);
             }

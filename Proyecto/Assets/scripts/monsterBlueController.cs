@@ -11,7 +11,7 @@ public class MonsterBlueController : Enemy
 
     // public GameObject blood;
     // Use this for initialization
-    void Start()
+    new void Start()
     {
         base.Start();
         // player = GeneralController.DefaultController().getPlayer();

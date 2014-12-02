@@ -12,7 +12,7 @@ public class Enemy :Character
     protected Vector3 initPos;
 
     //protected virtual  float ATTACKDISTANCE;
-    protected void Start()
+    new void Start()
     {
         base.Start();
         initPos = gameObject.transform.position;
