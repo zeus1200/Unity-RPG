@@ -9,13 +9,17 @@ public class GUIController : MonoBehaviour
 
     private Text text;
     private Image texture;
-
+    private Slider slider;
+    
     void Start()
     {
         text = GameObject.Find("Text").GetComponent<Text>();
         texture = GameObject.Find("TextTexture").GetComponent<Image>();
+        slider = GameObject.Find("Slider").GetComponent<Slider>();
         NotificationCenter.DefaultCenter().AddObserver(this, "drawText");
         NotificationCenter.DefaultCenter().AddObserver(this, "hideText");
+        NotificationCenter.DefaultCenter().AddObserver(this, "playerHitted");
+        NotificationCenter.DefaultCenter().AddObserver(this, "lifeTaken");
     }
 
     // Update is called once per frame
@@ -38,5 +42,15 @@ public class GUIController : MonoBehaviour
     {
         text.enabled = false;
         texture.enabled = false;
+    }
+
+    void playerHitted(Notification notification)
+    {
+        slider.value = GeneralController.DefaultController().getPlayer().GetComponent<PlayerController>().getLives();
+    }
+
+    void lifeTaken(Notification notification)
+    {
+        slider.value = GeneralController.DefaultController().getPlayer().GetComponent<PlayerController>().getLives();
     }
 }

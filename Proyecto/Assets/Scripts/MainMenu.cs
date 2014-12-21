@@ -18,6 +18,10 @@ public class MainMenu : MonoBehaviour {
 		width = 286f;
 		height = 62f;
         GeneralController.DefaultController();
+
+        Variables.posX = 0;
+        Variables.posY = 0;
+        Variables.mapName = "0-0";
 	}
 
 	void OnGUI()

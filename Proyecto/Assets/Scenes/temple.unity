@@ -234,6 +234,7 @@ GameObject:
   - 223: {fileID: 720897271}
   - 114: {fileID: 720897270}
   - 95: {fileID: 720897272}
+  - 114: {fileID: 720897274}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: TalkingNpc
@@ -310,6 +311,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &720897274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 720897268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 327b0ab5ec998da4d8a1abaa45befc74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFinished: 0
 --- !u!1 &1289692643
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,11 +485,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1413490016}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 327b0ab5ec998da4d8a1abaa45befc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFinished: 0
 --- !u!1 &1447515772
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,8 +537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33af2ce6b6715894da5149f88b2eafd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speakText: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque
-    risus in pretium volutpat.
+  speakText: Gracias por venir a rescatarme... Pero ya es demasiado tarde!!! Muahahahahahah
   movable: 1
   speakable: 1
   direction: 0

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CinematicController : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class CinematicController : MonoBehaviour
     private Vector3 playerFrom, playerTo, ladyFrom, ladyTo;
     private float time, timeShine;
     private bool bShine, stopCinematic;
+    public bool isFinished;
 
     // Use this for initialization
     void Start()
@@ -55,13 +57,22 @@ public class CinematicController : MonoBehaviour
         ladyAnim.SetInteger("direction", 3);
         lady.tag = "Npc";
         bShine = false;
+        isFinished=false;
     }
     
     // Update is called once per frame
     
     void Update()
     {
-        
+        if (isFinished) {
+            foreach (GameObject go in Object.FindObjectsOfType<GameObject>())
+            {
+                Destroy(go);
+            }
+            Application.LoadLevel("theEnd");
+        }
+
+
         if ((Time.time - time) <= 5f)
         {
             // player.transform.position += new Vector3(0,0f*Time.deltaTime,0); 
@@ -81,8 +92,8 @@ public class CinematicController : MonoBehaviour
                 ladyAnim.SetBool("moving", false);
                 //canvas.SetActive(false);
                 canvasAnim.SetBool("startAnim", false);
-                GameObject.Find("UpperScroll").SetActive(false);
-                GameObject.Find("LowerScroll").SetActive(false);
+                GameObject.Find("UpperScroll").GetComponent<Image>().enabled = false;
+                GameObject.Find("LowerScroll").GetComponent<Image>().enabled = false;
                 lady.tag = "TalkingNpc";
                 stopCinematic = false;
             }

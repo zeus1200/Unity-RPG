@@ -27,21 +27,18 @@ public class SwordController : MonoBehaviour
             {
                 from = Quaternion.Euler(0, 0, 315);
                 to = Quaternion.Euler(0, 0, 45);
-                transform.localPosition = new Vector3(0, 0.06f, 0);
                 renderer.sortingOrder = transform.parent.renderer.sortingOrder - 1;
             }
             if (direction == 2)
             {
                 from = Quaternion.Euler(0, 0, 225);
                 to = Quaternion.Euler(0, 0, 315);
-                transform.localPosition = new Vector3(0.06f, -0.06f, 0);
                 renderer.sortingOrder = transform.parent.renderer.sortingOrder + 1;
             }
             if (direction == 3)
             {
                 from = Quaternion.Euler(0, 0, 135);
                 to = Quaternion.Euler(0, 0, 225);
-                transform.localPosition = new Vector3(0, -0.06f, 0);
                 renderer.sortingOrder = transform.parent.renderer.sortingOrder + 1;
                 //print(renderer.sortingOrder);
             }
@@ -49,16 +46,30 @@ public class SwordController : MonoBehaviour
             {
                 from = Quaternion.Euler(0, 0, 45);
                 to = Quaternion.Euler(0, 0, 135);
-                transform.localPosition = new Vector3(-0.06f, -0.06f, 0);
                 renderer.sortingOrder = transform.parent.renderer.sortingOrder + 1;
             }
             isActive = true;
             time = Time.time;
             renderer.enabled = true;
         }
-
+        switch (direction)
+        {
+            case 1: transform.localPosition = new Vector3(0, 0.06f, 0);
+                break;
+            case 2: transform.localPosition = new Vector3(0.06f, -0.06f, 0);
+                break;
+            case 3:
+                transform.localPosition = new Vector3(0, -0.06f, 0);
+                break;
+            case 4:
+                transform.localPosition = new Vector3(-0.06f, -0.06f, 0);
+                break;
+        
+        
+        }
         //transform.rotation = from;
         transform.rotation = Quaternion.Lerp(from, to, (Time.time - time) / speed);
+        
         if (Time.time - time > speed)
         {
             isActive = false;

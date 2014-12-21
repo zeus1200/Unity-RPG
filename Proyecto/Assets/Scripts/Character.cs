@@ -10,6 +10,7 @@ public class Character : MonoBehaviour
     protected Rigidbody2D rigid;
     protected Vector2 attackDir;
     protected const float HITTIME = 0.25f;
+    protected int lives;
 
 
 

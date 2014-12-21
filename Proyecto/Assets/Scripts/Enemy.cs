@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Threading;
 
-public class Enemy :Character
+public class Enemy : Character
 {
     protected float timeDead, timeHit;
     protected GameObject player;
-    protected bool dead, hitted;
+    protected bool dead, hitted, isBoss;
     // protected Vector3 from, to;
-    protected int lives;
+
     protected float shootTime;
     protected Vector3 initPos;
 
@@ -16,16 +17,18 @@ public class Enemy :Character
     {
         base.Start();
         initPos = gameObject.transform.position;
+        isBoss = false;
     }
 
     void OnCollisionEnter2D(Collision2D coll)
-    {  
+    {
         if (coll.transform.tag == "Player")
         {
-            hitted=true;
+            hitted = true;
             timeHit = Time.time;
             calculateAttackDirection(coll.transform);
-        } else
+        }
+        else
         {
             movement = -1 * movement;
         }
@@ -34,7 +37,7 @@ public class Enemy :Character
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name == "sword")
-        { 
+        {
             lives--;
             if (lives <= 0)
             {
@@ -44,18 +47,26 @@ public class Enemy :Character
                 timeDead = Time.time;
                 dead = true;
                 GameObject.Instantiate(Resources.Load("prefabs/Blood"), transform.position, Quaternion.identity);
+                if (!isBoss)
+                {
+                   
+                        
+                        GameObject.Instantiate(Resources.Load("prefabs/Heart"), transform.position, Quaternion.identity);
+                    
+                }
             }
-            
+
             if (!hitted)
             {
-                
+
                 hitted = true;
                 timeHit = Time.time;
                 calculateAttackDirection(other.transform.parent.transform);
-               
+
             }
-            
-        } else
+
+        }
+        else
         {
             movement = -1 * movement;
         }

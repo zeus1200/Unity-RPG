@@ -6,10 +6,11 @@ public class BossController :  Enemy {
 	// Use this for initialization 
 	new void Start () {
         base.Start();
-        lives = 2;
+        lives = 10;
         speed = 1f;
         movementBoss = new Vector2(transform.right.x, transform.right.y);
         shootTime = 0.1f;
+        isBoss = true;
 	}
 	
 	// Update is called once per frame
